@@ -28,13 +28,11 @@ end
 ##
 # A pretty-printer for Ruby objects.
 #
-# To pretty-print JSON refer to JSON#pretty_generate.
-#
 # All examples assume you have loaded the PP class with:
 #   require 'pp'
 #
 ##
-# = What PP Does
+# == What PP Does
 #
 # Standard output by #p returns this:
 #   #<PP:0x81fedf0 @genspace=#<Proc:0x81feda0>, @group_queue=#<PrettyPrint::GroupQueue:0x81fed3c @queue=[[#<PrettyPrint::Group:0x81fed78 @breakables=[], @depth=0, @break=false>], []]>, @buffer=[], @newline="\n", @group_stack=[#<PrettyPrint::Group:0x81fed78 @breakables=[], @depth=0, @break=false>], @buffer_width=0, @indent=0, @maxwidth=79, @output_width=2, @output=#<IO:0x8114ee4>>
@@ -58,7 +56,7 @@ end
 #    @output_width=2>
 #
 ##
-# = Usage
+# == Usage
 #
 #   pp(obj)             #=> obj
 #   pp obj              #=> obj
@@ -70,7 +68,7 @@ end
 # It returns <tt>obj(s)</tt>.
 #
 ##
-# = Output Customization
+# == Output Customization
 #
 # To define a customized pretty printing function for your classes,
 # redefine method #pretty_print(+pp+) in the class.
@@ -79,15 +77,20 @@ end
 # The method uses #text, #breakable, #nest, #group and #pp to print the
 # object.
 #
+## 
+# == PP Alternatives
+#
+# To pretty-print JSON refer to JSON#pretty_generate.
+#
 ##
-# = Author
+# == Author
 # Tanaka Akira <akr@fsij.org>
 
 class PP < PrettyPrint
   # Outputs +obj+ to +out+ in pretty printed format of
   # +width+ columns in width.
   #
-  # If +out+ is omitted, +$>+ is assumed.
+  # If +out+ is omitted, $> is assumed.
   # If +width+ is omitted, 79 is assumed.
   #
   # PP.pp returns +out+.
