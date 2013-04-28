@@ -71,14 +71,14 @@ end
 # == Output Customization
 #
 # To define a customized pretty printing function for your classes,
-# redefine method #pretty_print(+pp+) in the class.
+# redefine method <code>#pretty_print(pp)</code> in the class.
 #
-# #pretty_print takes the +pp+ argument, which is an instance of the PP class.
+# <code>#pretty_print</code> takes the +pp+ argument, which is an instance of the PP class.
 # The method uses #text, #breakable, #nest, #group and #pp to print the
 # object.
 #
 ## 
-# == PP Alternatives
+# == Pretty-Print JSON
 #
 # To pretty-print JSON refer to JSON#pretty_generate.
 #
@@ -90,7 +90,7 @@ class PP < PrettyPrint
   # Outputs +obj+ to +out+ in pretty printed format of
   # +width+ columns in width.
   #
-  # If +out+ is omitted, $> is assumed.
+  # If +out+ is omitted, <code>$></code> is assumed.
   # If +width+ is omitted, 79 is assumed.
   #
   # PP.pp returns +out+.
